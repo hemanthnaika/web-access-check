@@ -1,0 +1,100 @@
+{
+  "summary": {
+    "totalPages": 1,
+    "avgPerformance": "35.0",
+    "totalAccessibilityErrors": 4,
+    "totalAccessibilityWarnings": 0,
+    "totalAuditScore": "76.5",
+    "duration": "55.8s"
+  },
+  "overallScores": {
+    "avgAccessibility": "83.0",
+    "avgSEO": "92.0",
+    "avgBestPractices": "96.0"
+  },
+  "groupedIssues": [
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+      "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+      "type": "error",
+      "count": 1,
+      "urls": ["https://www.flipkart.com/"]
+    },
+    {
+      "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+      "message": "Duplicate id attribute value \"product-3\" found on the web page.",
+      "type": "error",
+      "count": 2,
+      "urls": ["https://www.flipkart.com/", "https://www.flipkart.com/"]
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.21:1. Recommendation:  change text colour to #151515.",
+      "type": "error",
+      "count": 1,
+      "urls": ["https://www.flipkart.com/"]
+    }
+  ],
+  "results": [
+    {
+      "url": "https://www.flipkart.com/",
+      "lighthouse": {
+        "performance": 35,
+        "accessibility": 83,
+        "seo": 92,
+        "bestPractices": 96
+      },
+      "pa11y": {
+        "documentTitle": "Online Shopping India Mobile, Cameras, Lifestyle & more Online @ Flipkart.com",
+        "issues": [
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+            "type": "error",
+            "typeCode": 1,
+            "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
+            "context": "<img src=\"https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg\" width=\"160\" height=\"40\" title=\"Flipkart\">",
+            "selector": "#container > div > div:nth-child(1) > div > div > div > div > div > div > div > div > div > div:nth-child(1) > div > div > header > div:nth-child(1) > div:nth-child(2) > a > picture > img",
+            "runner": "htmlcs",
+            "runnerExtras": {}
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+            "type": "error",
+            "typeCode": 1,
+            "message": "Duplicate id attribute value \"product-3\" found on the web page.",
+            "context": "<div class=\"_8S67Ib\" id=\"product-3\" data-clone=\"false\" style=\"--item-padding: 0px;\"><div class=\"css-175oi2r\"><div d...</div>",
+            "selector": "#product-3",
+            "runner": "htmlcs",
+            "runnerExtras": {}
+          },
+          {
+            "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+            "type": "error",
+            "typeCode": 1,
+            "message": "Duplicate id attribute value \"product-0\" found on the web page.",
+            "context": "<div class=\"_8S67Ib\" id=\"product-0\" data-clone=\"true\" style=\"--item-padding: 0px;\"><div class=\"css-175oi2r\"><div d...</div>",
+            "selector": "#product-0",
+            "runner": "htmlcs",
+            "runnerExtras": {}
+          },
+          {
+            "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+            "type": "error",
+            "typeCode": 1,
+            "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.21:1. Recommendation:  change text colour to #151515.",
+            "context": "<div dir=\"auto\" class=\"css-1rynq56 r-1h7g6bg r-1b43r93 r-kzbkwu r-ttdzmv r-q4m81j r-1kihuf0 r-d0pm55\" style=\"font-family: inter_regular;\">Hang on, loading content</div>",
+            "selector": "#container > div > div:nth-child(1) > div > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(1)",
+            "runner": "htmlcs",
+            "runnerExtras": {}
+          }
+        ],
+        "errorCount": 4,
+        "warningCount": 0
+      }
+    }
+  ],
+  "aiSuggestions": {
+    "error": "AI parsing failed",
+    "text": "```json\n{\n  \"generalRecommendations\": [\n    \"Prioritize fixing the identified WCAG 2.0 AA accessibility errors. Addressing these will improve the user experience for people with disabilities and can also positively impact SEO.\",\n    \"Focus on improving the website's performance score. A score of 35.0 is low and can lead to a poor user experience and negatively affect search engine rankings.\",\n    \"While SEO and Best Practices scores are relatively high, continuous monitoring and optimization are recommended to maintain these scores and identify potential areas for improvement.\"\n  ],\n  \"topIssues\": [\n    {\n      \"issue\": \"Missing `alt` attribute on `img` element.\",\n      \"impact\": \"Accessibility: Users relying on screen readers will not be able to understand the image content. SEO: Search engines use alt text to understand the image content.\",\n      \"wcagReference\": \"WCAG 2.0 AA - 1.1.1 Non-text Content\",\n      \"priority\": \"High\"\n    },\n    {\n      \"issue\": \"Duplicate `id` attribute value \\\"product-3\\\".\",\n      \"impact\": \"Accessibility: Assistive technologies may not function correctly with duplicate IDs. JavaScript and CSS functionality might be unpredictable.\",\n      \"wcagReference\": \"WCAG 2.0 AA - 4.1.1 Parsing\",\n      \"priority\": \"High\"\n    },\n    {\n      \"issue\": \"Insufficient contrast between text and background.\",\n      \"impact\": \"Accessibility: Users with low vision may struggle to read the text.\",\n      \"wcagReference\": \"WCAG 2.0 AA - 1.4.3 Contrast (Minimum)\",\n      \"priority\": \"High\"\n    }\n  ],\n  \"fixExamples\": [\n    {\n      \"issue\": \"Missing `alt` attribute on `img` element.\",\n      \"example\": \"<img src=\\\"product.jpg\\\" alt=\\\"Description of the product image.\\\" />\",\n      \"explanation\": \"Add a descriptive `alt` attribute to each `img` element. The `alt` text should accurately convey the meaning of the image. If the image is purely decorative, use `alt=\\\"\\\"`.\"\n    },\n    {\n      \"issue\": \"Duplicate `id` attribute value \\\"product-3\\\".\",\n      \"example\": \"<div id=\\\"product-3-a\\\">...</div> <div id=\\\"product-3-b\\\">...</div>\",\n      \"explanation\": \"Ensure that all `id` attributes on the page are unique.  Review your HTML and JavaScript code to identify the source of the duplication and correct it. Use different naming conventions for `id` attributes, or consider using CSS classes instead of `id` attributes for styling when appropriate.\"\n    },\n    {\n      \"issue\": \"Insufficient contrast between text and background.\",\n      \"example\": \"CSS: color: #151515; background-color: #FFFFFF;\",\n      \"explanation\": \"Adjust the text and background colors to achieve a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. Use a color contrast checker tool to verify the contrast ratio.\"\n    }\n  ],\n  \"performanceOptimizationTips\": [\n    \"Optimize images: Use appropriate image formats (e.g., WebP), compress images without sacrificing too much quality, and use responsive images to serve different sizes based on the user's device.\",\n    \"Minify CSS, JavaScript, and HTML: Reduce the size of your code files by removing unnecessary characters and whitespace.\",\n    \"Leverage browser caching: Configure your server to send appropriate cache headers so that browsers can cache static assets.\",\n    \"Reduce server response time: Optimize your server-side code and database queries to reduce the time it takes for the server to respond to requests.\",\n    \"Use a Content Delivery Network (CDN): Distribute your website's assets across multiple servers to improve loading times for users in different geographical locations.\",\n    \"Lazy load images and other resources: Defer the loading of non-critical resources until they are needed.\",\n    \"Eliminate render-blocking resources:  Defer or asynchronously load CSS and JavaScript that block the initial rendering of the page.\",\n    \"Consider using a performance monitoring tool (e.g., Google PageSpeed Insights, WebPageTest) to identify specific performance bottlenecks.\"\n  ]\n}\n```"
+  }
+}

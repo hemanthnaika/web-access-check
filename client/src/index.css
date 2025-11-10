@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Tailwind Core */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ✅ Define theme variables properly */
+@theme {
+  --font-scada: "Scada", sans-serif;
+  --color-primary: #fcfdff;
+  --color-secondary: #f1f1fc;
+  --color-gray: #e4e4ed;
+}
+
+/* ✅ Apply global styles */
+:root {
+  font-family: var(--font-scada);
+  font-weight: 400;
+  background-color: var(--color-secondary);
+}
+
+/* ✅ Scrollbar styles */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray);
+}
