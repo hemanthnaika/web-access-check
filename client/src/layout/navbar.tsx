@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import { navLinks } from "../constants";
 import CustomLayout from "./customLayout";
 import { Menu, X } from "lucide-react";
@@ -23,12 +23,6 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <Link
-              to="/check"
-              className="px-5 py-2 md:px-10 md:py-2 rounded-full  bg-indigo-600 text-white"
-            >
-              Get started
-            </Link>
             <div
               className="md:hidden cursor-pointer"
               onClick={() => setOpen((prev) => !prev)}
