@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Globe, Cpu, BarChart, Accessibility } from "lucide-react";
+import { Globe, Accessibility } from "lucide-react";
 import CustomLayout from "@/layout/customLayout";
 
 export default function About() {
@@ -62,13 +62,8 @@ export default function About() {
           <h2 className="text-center text-2xl font-semibold text-gray-900 mb-8">
             What We Analyze
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2  gap-6">
             {[
-              {
-                title: "Performance",
-                icon: BarChart,
-                desc: "Measure loading speed, responsiveness, and overall site efficiency.",
-              },
               {
                 title: "Accessibility",
                 icon: Accessibility,
@@ -78,11 +73,6 @@ export default function About() {
                 title: "SEO",
                 icon: Globe,
                 desc: "Get insights on your site’s discoverability and meta optimization.",
-              },
-              {
-                title: "Best Practices",
-                icon: Cpu,
-                desc: "AI checks your site for coding, security, and UX improvements.",
               },
             ].map((feature, i) => (
               <Card

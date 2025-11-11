@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Accessibility, Cpu, Rocket, Search, Sparkles } from "lucide-react";
+import { Accessibility, Rocket, Search, Sparkles } from "lucide-react";
 import CustomLayout from "../layout/customLayout";
 
 export default function Services() {
@@ -65,23 +65,6 @@ export default function Services() {
               Our AI identifies missing meta tags, unoptimized titles, and
               keyword opportunities to enhance your search ranking and
               visibility on Google and other search engines.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Best Practices */}
-        <Card className="hover:shadow-lg transition duration-300">
-          <CardHeader>
-            <div className="flex justify-center text-indigo-600 mb-3">
-              <Cpu size={42} />
-            </div>
-            <CardTitle>Best Practices</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700 text-sm leading-relaxed">
-              We analyze your code structure, security headers, and
-              browser-compatibility to ensure your website follows web
-              development best practices.
             </p>
           </CardContent>
         </Card>

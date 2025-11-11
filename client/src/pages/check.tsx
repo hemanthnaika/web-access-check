@@ -38,7 +38,7 @@ const parseAISuggestions = (text: string): AISuggestions | null => {
   }
 };
 
-const Check = () => {
+const AccessCheck = () => {
   const [searchParams] = useSearchParams();
   const url = searchParams.get("url");
   const pages = searchParams.get("pages");
@@ -105,7 +105,6 @@ const Check = () => {
       </div>
     );
 
-  // ✅ Validation: check if important fields are NaN or missing
   const invalidData =
     !results.summary ||
     !results.overallScores ||
@@ -251,9 +250,11 @@ const Check = () => {
               {aiData.fixExamples?.map((fix, i) => (
                 <div key={i} className="mt-2">
                   <p className="font-medium">{fix.issue}</p>
-                  <pre className="bg-gray-100 p-2 rounded text-sm overflow-x-auto">
-                    {fix.example}
-                  </pre>
+                  {fix.example && (
+                    <pre className="bg-gray-100 p-2 rounded text-sm overflow-x-auto">
+                      {fix.example}
+                    </pre>
+                  )}
                   <p className="text-gray-600">{fix.explanation}</p>
                 </div>
               ))}
@@ -272,4 +273,4 @@ const Check = () => {
   );
 };
 
-export default Check;
+export default AccessCheck;

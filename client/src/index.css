@@ -30,3 +30,13 @@
 ::-webkit-scrollbar-thumb {
   background: var(--color-gray);
 }
+
+@keyframes progressMove {
+  0%,
+  100% {
+    width: 20%;
+  }
+  50% {
+    width: 90%;
+  }
+}

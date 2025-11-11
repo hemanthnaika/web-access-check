@@ -5,6 +5,24 @@ const SkeletonComponents = () => {
   return (
     <CustomLayout>
       <section className="mt-28 mb-10 space-y-10 animate-pulse ">
+        <div className="bg-white p-5 rounded-lg shadow-sm space-y-4">
+          <div>
+            <div className="flex justify-between text-sm text-gray-600 mb-1">
+              <span> Analyzing Website Accessibility...</span>
+              <span className="italic text-gray-400 animate-pulse">
+                Loading...
+              </span>
+            </div>
+            <div className="h-3 w-full bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-3 bg-indigo-500 rounded-full animate-[progressMove_2s_ease-in-out_infinite]"
+                style={{
+                  width: `${Math.floor(Math.random() * 70) + 20}%`,
+                }}
+              ></div>
+            </div>
+          </div>
+        </div>
         {/* Header Skeleton */}
         <div>
           <Skeleton className="h-8 w-1/3 mb-4" />

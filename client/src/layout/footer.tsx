@@ -2,25 +2,25 @@ import CustomLayout from "./customLayout";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary py-5 ">
+    <footer className="bg-white py-4 text-black">
       <CustomLayout>
-        <div className="flex items-center justify-between flex-wrap">
-          <p className="hover:text-indigo-600 transition-all font-bold">
+        <div className="flex flex-col  md:flex-row items-center justify-between  text-center space-y-1">
+          <p className="font-bold text-sm sm:text-base">
             &copy; {new Date().getFullYear()} AccessCheck. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 font-semibold text-sm">
-            <a href="#" className="hover:text-indigo-600 transition-all">
-              Contact Us
-            </a>
 
-            <a href="#" className="hover:text-indigo-600 transition-all">
-              Privacy Policy
+          <p className="text-sm font-medium">
+            Developed with{" "}
+            <span className="text-red-500 animate-pulse">❤️</span> by{" "}
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-400 transition-all font-semibold"
+            >
+              Hemanth
             </a>
-
-            <a href="#" className="hover:text-indigo-600 transition-all">
-              Trademark Policy
-            </a>
-          </div>
+          </p>
         </div>
       </CustomLayout>
     </footer>

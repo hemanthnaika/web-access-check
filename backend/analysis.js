@@ -107,6 +107,7 @@ Return JSON only with:
     raw = raw.replace(/^```json|```$/g, "").trim();
     return JSON.parse(raw);
   } catch {
+   
     return { error: "AI parsing failed", text: result.text };
   }
 }

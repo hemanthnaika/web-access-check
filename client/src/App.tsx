@@ -4,8 +4,9 @@ import Layout from "./layout/Layout";
 import Home from "./pages/home";
 import Check from "./pages/check";
 import Services from "./pages/services";
-import Contact from "./pages/Contact";
+
 import About from "./pages/about";
+import Contact from "./pages/contact";
 
 const router = createBrowserRouter([
   {
