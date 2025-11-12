@@ -5,7 +5,7 @@ import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 import "dotenv/config";
 import { GoogleGenAI } from "@google/genai";
-
+import puppeteer from "puppeteer";
 const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // Limits
@@ -31,31 +31,31 @@ export async function getInternalLinks(baseUrl, html) {
   return [...links];
 }
 
-// ✅ Run Lighthouse
 export async function runLighthouse(url) {
-  const chrome = await chromeLauncher.launch({
-    chromePath:
-      process.env.CHROME_PATH ||
-      "/usr/bin/chromium-browser" ||
-      "/usr/bin/chromium",
-    chromeFlags: [
-      "--headless",
-      "--no-sandbox",
-      "--disable-gpu",
-      "--disable-dev-shm-usage",
-      "--disable-setuid-sandbox",
-    ],
-  });
+  // 1️⃣ Launch Puppeteer's built-in Chromium
+  const browser = await puppeteer.launch({ headless: true });
 
-  const options = { logLevel: "error", output: "json", port: chrome.port };
+  // 2️⃣ Get the debugging port for Lighthouse to connect
+  const port = new URL(browser.wsEndpoint()).port;
+
+  // 3️⃣ Run Lighthouse using Puppeteer's browser
+  const options = {
+    logLevel: "error",
+    output: "json",
+    port,
+  };
+
   const runner = await lighthouse(url, options);
-  await chrome.kill();
 
+  // 4️⃣ Cleanup
+  await browser.close();
+
+  // 5️⃣ Return scores safely
   return {
-    performance: runner.lhr.categories.performance.score * 100,
-    accessibility: runner.lhr.categories.accessibility.score * 100,
-    seo: runner.lhr.categories.seo.score * 100,
-    bestPractices: runner.lhr.categories["best-practices"].score * 100,
+    performance: (runner.lhr.categories.performance?.score || 0) * 100,
+    accessibility: (runner.lhr.categories.accessibility?.score || 0) * 100,
+    seo: (runner.lhr.categories.seo?.score || 0) * 100,
+    bestPractices: (runner.lhr.categories["best-practices"]?.score || 0) * 100,
   };
 }
 
