@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: web-access-check-backend
+    env: node
+    region: oregon # optional, pick your preferred region
+    plan: free # or starter/pro if you’re using higher tiers
+    buildCommand: |
+      apt-get update
+      apt-get install -y chromium
+      npm install
+    startCommand: npm start
+    environment:
+      NODE_ENV: production
+      CHROME_PATH: /usr/bin/chromium
