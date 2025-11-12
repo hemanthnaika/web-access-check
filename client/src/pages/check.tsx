@@ -53,7 +53,7 @@ const AccessCheck = () => {
     try {
       setLoading(true);
       const res: AxiosResponse<Response> = await axios.post(
-        `{${import.meta.env.VITE_BASE_URL}/analyze}`,
+        `${import.meta.env.VITE_BASE_URL}/analyze`,
         { url, pages }
       );
       setResults(res.data);

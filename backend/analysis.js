@@ -33,7 +33,20 @@ export async function getInternalLinks(baseUrl, html) {
 
 // ✅ Run Lighthouse
 export async function runLighthouse(url) {
-  const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless"] });
+  const chrome = await chromeLauncher.launch({
+    chromePath:
+      process.env.CHROME_PATH ||
+      "/usr/bin/chromium-browser" ||
+      "/usr/bin/chromium",
+    chromeFlags: [
+      "--headless",
+      "--no-sandbox",
+      "--disable-gpu",
+      "--disable-dev-shm-usage",
+      "--disable-setuid-sandbox",
+    ],
+  });
+
   const options = { logLevel: "error", output: "json", port: chrome.port };
   const runner = await lighthouse(url, options);
   await chrome.kill();
@@ -107,7 +120,6 @@ Return JSON only with:
     raw = raw.replace(/^```json|```$/g, "").trim();
     return JSON.parse(raw);
   } catch {
-   
     return { error: "AI parsing failed", text: result.text };
   }
 }
